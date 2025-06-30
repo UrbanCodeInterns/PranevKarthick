@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Grand Ellora</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Food Menu Styles */
+    .food-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .food-item {
+      width: 220px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 2px 2px 10px #ddd;
+    }
+    .food-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .food-item button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Popup Styles */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .popup-content {
+      background: #fff;
+      padding: 30px;
+      margin: 10% auto;
+      border-radius: 8px;
+      width: 300px;
+      position: relative;
+      animation: slideIn 0.4s ease;
+    }
+    .close-btn {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Offer Banner -->
+  <div class="offer-banner">
+    🎉 30-60% Off on Orders Above ₹299/- (Food only) 🎉
+    🎉 30-60% Off on Rooms Above ₹1990/- (Rooms only) 🎉<br>
+    🎉 Combo offer Book any one room above ₹2999 and get free dinner for 2 nights as complimentary 🎉
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1 class="logo">The Grand Ellora</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About Us</a>
+
+      <!-- Booking Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Booking</a>
+        <div class="dropdown-content">
+          <a href="rooms-types.html" target="_blank">Rooms Gallery</a>
+          <a href="foods.html" target="_blank">Food Menu</a>
+        </div>
+      </div>
+
+      <!-- Rooms Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Rooms</a>
+        <div class="dropdown-content">
+          <a href="rooms-types.html" target="_blank">Rooms Gallery</a>
+          <a href="#rooms">Room Overview</a>
+        </div>
+      </div>
+
+      <!-- Branches Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Branches</a>
+        <div class="dropdown-content">
+          <a href="#">Chennai</a>
+          <a href="#">Delhi</a>
+          <a href="#">Dubai</a>
+          <a href="#">New Zealand</a>
+          <a href="#">Australia</a>
+          <a href="#">Denmark</a>
+          <a href="#">Kenya</a>
+          <a href="#">Qatar</a>
+          <a href="#">Seattle</a>
+        </div>
+      </div>
+
+      <!-- Amenities Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Amenities</a>
+        <div class="dropdown-content">
+          <a href="amities.html" target="_blank">Hotel Amenities</a>
+        </div>
+      </div>
+
+      <!-- Contact Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Contact</a>
+        <div class="dropdown-content">
+          <a href="contact.html" target="_blank">Contact Page</a>
+        </div>
+      </div>
+
+      <!-- FAQs Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Hotel FAQs</a>
+        <div class="dropdown-content">
+          <a href="hotelfaq.html" target="_blank">General FAQs</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">About Hotel</a>
+        <div class="dropdown-content">
+          <a href="hotelblog.html" target="_blank">Hotel Blog</a>
+          <a href="hotelnews.html" target="_blank">Hotel News</a>
+          <a href="hotelevents/events.html" target="_blank">Hotel Events</a>
+          <a href="cctvlogin.html" target="_blank">Guest CCTV Access</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2 style="color:black">Welcome to Grand Ellora Hotel</h2>
+    <p>Experience the comfort & elegance you deserve.</p>
+    <button class="btn-book" onclick="openPopup()">Book Now</button>
+  </section>
+
+  <!-- Rooms Section -->
+  <section class="rooms" id="rooms">
+    <h2>Our Rooms</h2>
+    <div class="room-cards">
+      <div class="room-card animate">
+        <img src="download.webp" alt="Deluxe Room">
+        <h3>Deluxe Room</h3>
+        <p>Starting at ₹1,999/night</p>
+      </div>
+      <div class="room-card animate">
+        <img src="OIP (5).webp" alt="Executive Suite">
+        <h3>Executive Suite</h3>
+        <p>Starting at ₹3,999/night</p>
+      </div>
+      <div class="room-card animate">
+        <img src="th.jpg" alt="Presidential Suite">
+        <h3>Presidential Suite</h3>
+        <p>Starting at ₹4,999/night</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      At Grand Ellora, we believe in crafting unforgettable experiences.
+      Nestled in the heart of the city, our elegant rooms, world-class dining, and personalized service ensure your stay is nothing less than perfect.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Grand Ellora. All Rights Reserved.</p>
+ <!-- Booking Popup Form -->
+<div id="bookingPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <h2>Book Your Stay</h2>
+    <form id="bookingForm">
+      <input type="text" name="name" placeholder="Full Name" required><br>
+      
+      <select name="room_type" required>
+        <option value="">Select Room Type</option>
+        <option value="Deluxe Room">Deluxe Room</option>
+        <option value="Executive Suite">Executive Suite</option>
+        <option value="Presidential Suite">Presidential Suite</option>
+      </select><br>
+
+      <input type="date" name="checkin_date" required><br>
+      <input type="number" name="nights" placeholder="Nights" min="1" required><br><br>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    });
+    document.querySelectorAll('.animate').forEach(card => observer.observe(card));
+
+    // Popup Logic
+    function openPopup() {
+      document.getElementById("bookingPopup").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("bookingPopup").style.display = "none";
+    }
+
+    // Close popup when clicking outside
+    window.onclick = function(event) {
+      let popup = document.getElementById("bookingPopup");
+      if (event.target == popup) {
+        popup.style.display = "none";
+      }
+    }
+  </script>
+  <script>
+  document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("C:\Users\Prithivi Krishn", "template_l427qfv", this)
+      .then(() => {
+        alert("Booking confirmed! Confirmation email sent.");
+        closePopup();  // Close the form popup
+      }, (error) => {
+        alert("Error: " + JSON.stringify(error));
+      });
+  });
+</script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.sendForm("Fbx8XWdhIy0OOpzRz", "template_l427qfv", this)
+
+  })();
+</script>
+
+</body>
+</html>
