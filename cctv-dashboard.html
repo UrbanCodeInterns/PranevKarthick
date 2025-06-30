@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guest CCTV Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-image: url(2150368726.jpg);
+      background-size: cover;
+    }
+
+    h1 {
+      text-align: center;
+      color: #827129;
+      margin-bottom: 30px;
+    }
+
+    .cctv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .camera-box {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .camera-box h3 {
+      margin: 0;
+      padding: 10px;
+      background-color: #007B5E;
+      color: white;
+      font-size: 18px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 220px;
+      border: none;
+    }
+
+    .logout {
+      display: block;
+      margin: 30px auto 0;
+      text-align: center;
+      padding: 10px 20px;
+      background: #d9534f;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      width: max-content;
+    }
+
+    .logout:hover {
+      background-color: #c9302c;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📹 Guest CCTV Access Dashboard</h1>
+
+  <div class="cctv-grid">
+    <!-- Parking Lot -->
+    <div class="camera-box">
+      <h3>🚗 Parking Area</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/U7HRKjlXK-Y?si=z0UdCYm3TjQDAiK4&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Lobby View -->
+    <div class="camera-box">
+      <h3>🏨 Main Lobby</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Zu1mVzjnYLw?si=QjC46l_AVFgGDq5h&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Pool Area -->
+    <div class="camera-box">
+      <h3>🏊 Pool View</h3>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/1LfCGXn-7Uo?si=FJES22kjA6iMUzDV&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    </div>
+  </div>
+  <a class="logout" href="cctvlogin.html">← Logout</a>
+<a href="hotel.html" class="back-home">← Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Hotel</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Food Menu Styles */
+    .food-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+    .food-item {
+      width: 220px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 2px 2px 10px #ddd;
+    }
+    .food-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .food-item button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Offer Banner -->
+  <div class="offer-banner">
+    🎉 30-60% Off on Orders Above ₹299/- (Food only) 🎉
+  </div>
+
+  <!-- Header -->
+  <header>
+    <h1 class="logo">Luxury Hotel</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#about">About Us</a>
+
+      <!-- Booking Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Booking</a>
+        <div class="dropdown-content">
+          <a href="#">Rooms</a>
+          <a href="#food">Foods</a> <!-- Link to Food Section -->
+        </div>
+      </div>
+
+      <!-- Branches Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Branches</a>
+        <div class="dropdown-content">
+          <a href="#">Chennai</a>
+          <a href="#">Delhi</a>
+          <a href="#">Dubai</a>
+          <a href="#">New Zealand</a>
+          <a href="#">Australia</a>
+          <a href="#">Denmark</a>
+        </div>
+      </div>
+
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to Luxury Hotel</h2>
+    <p>Experience the comfort & elegance you deserve.</p>
+    <button class="btn-book">Book Now</button>
+  </section>
+
+  <!-- Rooms Section -->
+  <section class="rooms" id="rooms">
+    <h2>Our Rooms</h2>
+    <div class="room-cards">
+      <div class="room-card animate">
+        <img src="download.webp" alt="Deluxe Room">
+        <h3>Deluxe Room</h3>
+        <p>Starting at ₹2,999/night</p>
+      </div>
+      <div class="room-card animate">
+        <img src="OIP (5).webp" alt="Executive Suite">
+        <h3>Executive Suite</h3>
+        <p>Starting at ₹5,999/night</p>
+      </div>
+      <div class="room-card animate">
+        <img src="th.jpg" alt="Presidential Suite">
+        <h3>Presidential Suite</h3>
+        <p>Starting at ₹9,999/night</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Menu Section -->
+  <section id="food">
+    <h2 style="text-align:center">Food Menu</h2>
+    <div class="food-container">
+      <!-- Korean -->
+      <div class="food-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Korean.food-Bibimbap-02.jpg/640px-Korean.food-Bibimbap-02.jpg" alt="Bibimbap">
+        <h3>Bibimbap</h3>
+        <button>Add to Cart</button>
+      </div>
+      <div class="food-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Kimchi_on_plate.jpg/640px-Kimchi_on_plate.jpg" alt="Kimchi">
+        <h3>Kimchi</h3>
+        <button>Add to Cart</button>
+      </div>
+      <div class="food-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Tteokbokki_with_fish_cake_and_vegetables.jpg" alt="Tteokbokki">
+        <h3>Tteokbokki</h3>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- Italian -->
+      <div class="food-item">
+        <img src="https://static.toiimg.com/thumb/53110049.cms?width=1200&height=900" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <button>Add to Cart</button>
+      </div>
+      <div class="food-item">
+        <img src="https://www.recipetineats.com/wp-content/uploads/2019/01/Spaghetti-Carbonara_2.jpg" alt="Spaghetti Carbonara">
+        <h3>Spaghetti Carbonara</h3>
+        <button>Add to Cart</button>
+      </div>
+      <div class="food-item">
+        <img src="https://www.simplyrecipes.com/thmb/C-BVJkO4axXWBgznKy7h4Fw0-QA=/1777x1333/smart/filters:no_upscale()/Simply-Recipes-Lasagna-LEAD-4b-4d78c447ba38422a9609b41a7fdcbddf.jpg" alt="Lasagna">
+        <h3>Lasagna</h3>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- Chettinad -->
+      <div class="food-item">
+        <img src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/sibyl_sunitha/Chettinad_Chicken_Curry.jpg" alt="Chettinad Chicken">
+        <h3>Chettinad Chicken</h3>
+        <button>Add to Cart</button>
+      </div>
+      <div class="food-item">
+        <img src="https://i.ytimg.com/vi/H0Rt1AfQbkA/maxresdefault.jpg" alt="Mutton Chukka">
+        <h3>Mutton Chukka</h3>
+        <button>Add to Cart</button>
+      </div>
+      <div class="food-item">
+        <img src="https://rakskitchen.net/wp-content/uploads/2011/10/Paneeyaram.jpg" alt="Kuzhi Paniyaram">
+        <h3>Kuzhi Paniyaram</h3>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      At Luxury Hotel, we believe in crafting unforgettable experiences.
+      Nestled in the heart of the city, our elegant rooms, world-class dining, and personalized service ensure your stay is nothing less than perfect.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Luxury Hotel. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    });
+    document.querySelectorAll('.animate').forEach(card => observer.observe(card));
+
+    // Modal behavior
+    const modal = document.getElementById("settingsModal");
+    const bookBtn = document.querySelector(".btn-book");
+    const closeBtn = document.querySelector(".close-btn");
+
+    if (bookBtn) {
+      bookBtn.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modal.classList.add("show");
+      });
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+        modal.classList.remove("show");
+      });
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        modal.classList.remove("show");
+      }
+    }
+
+
+    
+    
+  </script>
+</body>
+</html>

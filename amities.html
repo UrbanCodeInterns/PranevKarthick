@@ -1,0 +1,186 @@
+<!-- Hotel Amenities Section -->
+<section id="amenities" style="padding: 40px; background-image: url('amlkwdk.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+  <h2 style="text-align:center; font-size: 2em; color: black; margin-bottom: 30px;">Our Hotel Amenities</h2>
+
+  <div class="amenities-grid">
+
+    <!-- In-Room Amenities -->
+    <div class="amenity-card">
+      <h3>🛏️ In-Room Amenities</h3>
+      <ul>
+        <li>Air Conditioning / Heating</li>
+        <li>Complimentary Wi-Fi</li>
+        <li>Smart TV with Streaming</li>
+        <li>Mini Bar / Refrigerator</li>
+        <li>Room Service (24/7)</li>
+        <li>In-room Safe</li>
+        <li>Private Balcony</li>
+      </ul>
+    </div>
+
+    <!-- Wellness & Leisure -->
+    <div class="amenity-card">
+      <h3>🧖‍♀️ Wellness & Leisure</h3>
+      <ul>
+        <li>Spa & Wellness Center</li>
+        <li>Swimming Pool</li>
+        <li>Gym / Fitness Center</li>
+        <li>Yoga Zone</li>
+        <li>Jacuzzi / Sauna</li>
+        <li>Massage Services</li>
+      </ul>
+    </div>
+
+    <!-- Food & Beverage -->
+    <div class="amenity-card">
+      <h3>🍽️ Food & Beverage</h3>
+      <ul>
+        <li>Complimentary Breakfast</li>
+        <li>Rooftop Dining</li>
+        <li>Multi-Cuisine Restaurant</li>
+        <li>24/7 Room Service</li>
+        <li>Lounge Bar</li>
+      </ul>
+    </div>
+
+    <!-- Business & Services -->
+    <div class="amenity-card">
+      <h3>💼 Business & Services</h3>
+      <ul>
+        <li>High-Speed Internet</li>
+        <li>Business Center</li>
+        <li>Conference Rooms</li>
+        <li>Laptop Rental</li>
+      </ul>
+    </div>
+
+    <!-- Transport & Parking -->
+    <div class="amenity-card">
+      <h3>🚗 Transport & Parking</h3>
+      <ul>
+        <li>Valet Parking</li>
+        <li>Airport Shuttle</li>
+        <li>Car/Bike Rentals</li>
+        <li>EV Charging Station</li>
+      </ul>
+    </div>
+
+    
+    <!-- Accessibility -->
+    <div class="amenity-card">
+      <h3>♿ Accessibility</h3>
+      <ul>
+        <li>Wheelchair Friendly</li>
+        <li>Elevator Access</li>
+        <li>Elderly Assistance</li>
+      </ul>
+    </div>
+
+    <!-- Other Amenities -->
+    <div class="amenity-card">
+      <h3>🌐 Other Amenities</h3>
+      <ul>
+        <li>Concierge Services</li>
+        <li>Travel Desk</li>
+        <li>Pet-Friendly Rooms</li>
+        <li>Library Lounge</li>
+      </ul>
+    </div>
+    <!-- Family-Friendly -->
+<div class="amenity-card">
+  <h3>👨‍👩‍👧 Family-Friendly</h3>
+  <ul>
+    <li>Family Suites</li>
+    <li>Kids Play Area</li>
+    <li>Babysitting Services</li>
+    <li>Child-friendly Menu</li>
+  </ul>
+</div>
+
+
+<div class="amenity-card">
+  <h3>🛡️ Security Features</h3>
+  <ul>
+    <li>CCTV Surveillance in All Public Areas</li>
+    <li>Biometric Access Control</li>
+    <li>In-room Locker Facility for Valuables</li>
+    <li>Guest-accessible CCTV Viewing Option</li>
+    <li>License Plate Recognition in Parking</li>
+    <li>Fire Extinguishers on All Floors</li>
+    <li>24/7 Medical Emergency Assistance</li>
+  </ul>
+</div>
+
+
+
+  </div>
+
+  <!-- Back to Home Button -->
+  <a href="hotel.html" class="back-home">← Back to Home</a>
+
+</section>
+
+<!-- CSS Styles for Amenities -->
+<style>
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .amenity-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .amenity-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .amenity-card h3 {
+    font-size: 1.2em;
+    color: #007B5E;
+    margin-bottom: 12px;
+  }
+
+  .amenity-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .amenity-card ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    color: #333;
+  }
+
+  .amenity-card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+  }
+
+  .back-home {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .back-home:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+</style>

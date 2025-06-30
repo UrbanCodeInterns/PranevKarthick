@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Event Booking - Grand Ellora</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background: #b53d2f;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      flex: 1;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      color: #1d2b64;
+    }
+
+    .card-content p {
+      font-size: 15px;
+      color: #444;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 15px;
+      color: #b53d2f;
+      font-weight: bold;
+      text-decoration: none;
+      border: 2px solid #b53d2f;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .card-content a:hover {
+      background: #b53d2f;
+      color: white;
+    }
+
+    .overlay, .popup {
+      display: none;
+    }
+
+    .overlay.show {
+      display: block;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      z-index: 99;
+    }
+
+    .popup.show {
+      display: block;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      z-index: 100;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .popup h3 {
+      color: #1d2b64;
+      text-align: center;
+    }
+
+    .popup form input,
+    .popup form textarea,
+    .popup form select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .popup button {
+      width: 100%;
+      padding: 12px;
+      background: #1d2b64;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .popup button:hover {
+      background: #111d4a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Host Your Events at The Grand Ellora</h1>
+    <p>Unforgettable venues for your most memorable moments.</p>
+  </div>
+
+  <div class="event-grid">
+    <!-- Weddings -->
+    <div class="card">
+      <img src="wedding-event.jpg.webp" alt="Wedding event">
+      <div class="card-content">
+        <h3>Dream Weddings</h3>
+        <p>Plan your perfect fairytale wedding with premium decor, banquet halls and catering services.</p>
+        <a onclick="openPopup('Wedding')">Book Your Wedding →</a>
+      </div>
+    </div>
+
+    <!-- Conferences -->
+    <div class="card">
+      <img src="corporate-event.jpg.webp" alt="Corporate Event">
+      <div class="card-content">
+        <h3>Corporate Conferences</h3>
+        <p>From meetings to conventions, our halls and services ensure a professional experience.</p>
+        <a onclick="openPopup('Conference')">Reserve Conference Hall →</a>
+      </div>
+    </div>
+
+    <!-- Birthdays -->
+    <div class="card">
+      <img src="birthday-party.jpg.webp" alt="Birthday Party">
+      <div class="card-content">
+        <h3>Birthday & Social Gatherings</h3>
+        <p>Celebrate in style with DJ setups, themed decor, and customized party menus.</p>
+        <a onclick="openPopup('Birthday')">Plan Your Party →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <h3 id="popupTitle">Book Your Event</h3>
+    <form id="bookingForm">
+      <input type="hidden" name="event_type" id="eventType" />
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <input type="date" name="date" required />
+
+      <!-- Dropdown for Venue -->
+      <select name="venue" required>
+        <option value="" disabled selected>Preferred Venue</option>
+        <option>Beach</option>
+        <option>Garden</option>
+        <option>Party Hall</option>
+        <option>Conference Hall</option>
+      </select>
+
+      <input type="number" name="guests" placeholder="Number of Guests" min="1" required />
+      <input type="tel" name="contact" placeholder="Contact Number" required />
+      <textarea name="notes" placeholder="Special Requests (optional)" rows="3"></textarea>
+      <button type="submit">Confirm Booking</button>
+      <button type="button" onclick="closePopup()">Cancel</button>
+    </form>
+  </div>
+
+  <!-- EmailJS Script -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init('Fbx8XWdhIy0OOpzRz'); // Replace with your actual public key
+
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+    const popupTitle = document.getElementById('popupTitle');
+    const eventTypeInput = document.getElementById('eventType');
+    const form = document.getElementById('bookingForm');
+
+    function openPopup(type) {
+      popup.classList.add('show');
+      overlay.classList.add('show');
+      popupTitle.textContent = `Book Your ${type}`;
+      eventTypeInput.value = type;
+    }
+
+    function closePopup() {
+      popup.classList.remove('show');
+      overlay.classList.remove('show');
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('service_ldk1eff', 'template_go1zbfo', this)
+        .then(function(response) {
+          alert("✅ Booking confirmed! A confirmation email has been sent.");
+          form.reset();
+          closePopup();
+        }, function(error) {
+          alert("❌ Failed to send email. Please try again later.");
+          console.error(error);
+        });
+    });
+  </script>
+
+</body>
+</html>

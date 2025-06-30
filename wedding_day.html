@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Wedding Day</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f8cdda, #1d2b64);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .booking-container {
+      background: #ffffffee;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #1d2b64;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #111d4a;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 999;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .popup.show {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup h3 {
+      color: #1d2b64;
+      margin-bottom: 10px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: none;
+    }
+
+    .overlay.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="booking-container">
+    <h2>Book Your Wedding Day</h2>
+    <form id="weddingForm">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="date" id="date" required />
+      <input type="text" id="venue" placeholder="Preferred Venue" required />
+      <input type="number" id="guests" placeholder="Number of Guests" min="1" required />
+      <input type="tel" id="contact" placeholder="Contact Number" required />
+      <textarea id="notes" placeholder="Special Requests (optional)" rows="3"></textarea>
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="popup" id="popup">
+    <h3>Booking Confirmed 🎉</h3>
+    <p>We will contact you shortly!</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+
+  <script>
+    const form = document.getElementById('weddingForm');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // You can add backend integration here
+
+      // Show popup
+      popup.classList.add('show');
+      overlay.classList.add('show');
+
+      // Clear form
+      form.reset();
+    });
+
+    function closePopup() {
+      popup.classList.remove('show');
+      overlay.classList.remove('show');
+    }
+  </script>
+</body>
+</html>

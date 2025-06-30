@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #444;
+    }
+    nav button {
+      background: none;
+      color: white;
+      padding: 14px;
+      border: none;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background-color: #666;
+    }
+    .content {
+      padding: 20px;
+    }
+    .section {
+      display: none;
+    }
+    .section.active {
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hotel Admin Dashboard</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('rooms')">Room Bookings</button>
+    <button onclick="showSection('food')">Food Orders</button>
+    <button onclick="showSection('cctv')">CCTV Management</button>
+  </nav>
+
+  <div class="content">
+    <div id="rooms" class="section active">
+      <h2>Room Bookings</h2>
+      <table>
+        <tr><th>Guest Name</th><th>Room No</th><th>Check-in</th><th>Check-out</th><td> Room Type </td></tr>
+        <tr><td>Vishnu </td><td>101</td><td>2025-06-30</td><td>2025-07-02</td> <td>Business Suite </td></tr>
+      </table>
+    </div>
+
+    <div id="food" class="section">
+      <h2>Food Orders</h2>
+      <table>
+        <tr><th>Guest Name</th><th>Food Item</th><th>Quantity</th><th>Time</th></tr>
+        <tr><td>Prithivi </td><td>Mutton Chukka</td><td>2</td><td>7:00 PM</td></tr>
+      </table>
+    </div>
+
+    <div class="cctv-grid">
+    <!-- Parking Lot -->
+    <div class="camera-box">
+      <h3>🚗 Parking Area</h3>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/U7HRKjlXK-Y?si=z0UdCYm3TjQDAiK4&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Lobby View -->
+    <div class="camera-box">
+      <h3>🏨 Main Lobby</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Zu1mVzjnYLw?si=QjC46l_AVFgGDq5h&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Pool Area -->
+    <div class="camera-box">
+      <h3>🏊 Pool View</h3>
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/1LfCGXn-7Uo?si=FJES22kjA6iMUzDV&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
